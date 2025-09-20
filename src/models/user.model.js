@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-
+// username, email, password, role, profile:{firstName, lastName, biography, avatarURL, birthDate}, createdAt, updatedAt
 const userSchema = new Schema({
     username:{
         type: String,
@@ -30,7 +30,6 @@ const userSchema = new Schema({
             min:2,
             require: true,
             max:50
-            
         },
         lastName:{
             type: String,
@@ -54,8 +53,9 @@ const userSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    updateAt:{
-        type: Date
+    updatedAt:{
+        type: Date,
+        default: Date.now
     }
 
 })
