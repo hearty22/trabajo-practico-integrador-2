@@ -1,5 +1,5 @@
-import express from "express";
 import "dotenv/config";
+import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { databaseConect } from "./src/config/database.js";
@@ -22,4 +22,4 @@ app.use(cors({
 app.listen(PORT, async ()=>{
     await databaseConect();
     console.log(`server listening: http://localhost:${PORT}`);
-})
+});
