@@ -48,16 +48,7 @@ const userSchema = new Schema({
         birthDate:{
             type: Date
         }
-    },
-    createdAt:{
-        type: Date,
-        default: Date.now
-    },
-    updatedAt:{
-        type: Date,
-        default: Date.now
     }
-
-})
+},{timestamps: true});
 
 export const userModel = model("users", userSchema);
