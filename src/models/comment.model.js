@@ -21,12 +21,6 @@ const commentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "articles"
     },
-    createdAt:{
-        type: Date,
-        default: Date.now
-    },
-    updatedAt:{
-        type: Date
-    }
-});
+
+},{timestamps: true});
 export const commentModel = model( "comments", commentSchema);

@@ -48,6 +48,13 @@ const userSchema = new Schema({
         birthDate:{
             type: Date
         }
+    },
+    articles:[{
+        type: Schema.Types.ObjectId, ref: "articles"
+    }],
+    deletedAt:{
+        type: Date,
+        default: null
     }
 },{timestamps: true});
 

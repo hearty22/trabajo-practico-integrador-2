@@ -1,0 +1,12 @@
+import { Router } from "express";
+import { deleteUserById, getUserById, getUsers, updateUserById } from "../controllers/user.controllers.js";
+import { admin } from "../middlewares/admin/admin.middleware.js";
+import validator from "../middlewares/validator.js";
+import { deleteUserByIdValidation, getUsersByIdValidator, updateUserByIdValidator } from "../middlewares/validators/user.validators.js";
+const userRouter = Router();
+userRouter.use(admin);
+userRouter.get("/users", getUsers);
+userRouter.get("/users/:id", getUsersByIdValidator, validator, getUserById);
+userRouter.put("/users/:id", updateUserByIdValidator, validator, updateUserById);
+userRouter.delete("/users/:id", deleteUserByIdValidation ,validator, deleteUserById);
+export default userRouter;

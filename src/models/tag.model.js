@@ -15,14 +15,7 @@ const tagSchema = new Schema({
     description:{
         type: String,
         max: 200
-    },
-    createdAt:{
-        type: Date,
-        default: Date.now
-    },
-    updatedAt:{
-        type: Date
     }
-});
+},{timestamps: true});
 
 export const tagModel = model("tags", tagSchema);

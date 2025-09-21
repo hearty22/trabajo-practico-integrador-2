@@ -37,9 +37,7 @@ const articleSchema = new Schema({
     tags:[{
         type: Schema.Types.ObjectId,
         ref: "tags"
-    }],
-    createdAt:{type: Date, default: Date.now},
-    updatedAt:{type: Date}
-});
+    }]
+},{timestamps: true});
 
 export const articleModel = model("articles", articleSchema);
