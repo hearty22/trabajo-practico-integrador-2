@@ -1,5 +1,5 @@
 # Blog API con Node.js y MongoDB
-
+a
 ## Descripción
 
 API RESTful desarrollada con Node.js y Express que permite gestionar un sistema de blog completo con autenticación JWT, usuarios, artículos, comentarios y etiquetas. El sistema utiliza MongoDB como base de datos y implementa un diseño de base de datos normalizado con relaciones referenciadas para mantener la integridad y flexibilidad de los datos.
