@@ -5,6 +5,9 @@ import { Schema, model } from "mongoose";
 // ● createdAt (Date)
 // ● updatedAt (Date)
 const tagSchema = new Schema({
+    _id:{
+        type: String
+    },
     name:{
         type: String,
         unique: true,

@@ -35,7 +35,7 @@ const articleSchema = new Schema({
         ref: "users"
     },
     tags:[{
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
         ref: "tags"
     }]
 },{timestamps: true});
