@@ -82,7 +82,6 @@ API RESTful desarrollada con Node.js y Express que permite gestionar un sistema 
 Registrar un nuevo usuario.
 ```http
 POST /api/auth/register
-Content-Type: application/json
 
 {
   "username": "johndoe",
@@ -121,7 +120,7 @@ Content-Type: application/json
 Iniciar sesión.
 ```http
 POST /api/auth/login
-Content-Type: application/json
+
 
 {
   "email": "john@example.com",
@@ -133,15 +132,14 @@ Content-Type: application/json
 Obtener perfil del usuario autenticado.
 ```http
 GET /api/auth/profile
-Authorization: Bearer <token>
+
 ```
 
 #### `PUT /api/auth/profile`
 Actualizar perfil del usuario.
 ```http
 PUT /api/auth/profile
-Authorization: Bearer <token>
-Content-Type: application/json
+
 
 {
   "profile": {
@@ -154,7 +152,7 @@ Content-Type: application/json
 Cerrar sesión.
 ```http
 POST /api/auth/logout
-Authorization: Bearer <token>
+
 ```
 
 ###  Usuarios (Solo Administradores)
@@ -163,22 +161,19 @@ Authorization: Bearer <token>
 Listar todos los usuarios (requiere rol admin).
 ```http
 GET /api/users
-Authorization: Bearer <admin_token>
 ```
 
 #### `GET /api/users/:id`
 Obtener usuario por ID (requiere rol admin).
 ```http
 GET /api/users/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <admin_token>
 ```
 
 #### `PUT /api/users/:id`
 Actualizar usuario (requiere rol admin).
 ```http
 PUT /api/users/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <admin_token>
-Content-Type: application/json
+
 
 {
   "role": "admin"
@@ -189,7 +184,7 @@ Content-Type: application/json
 Eliminar usuario (requiere rol admin).
 ```http
 DELETE /api/users/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <admin_token>
+
 ```
 
 ###  Artículos
@@ -198,8 +193,6 @@ Authorization: Bearer <admin_token>
 Crear un nuevo artículo.
 ```http
 POST /api/articles
-Authorization: Bearer <token>
-Content-Type: application/json
 
 {
   "title": "Introducción a Node.js",
@@ -225,8 +218,7 @@ GET /api/articles/60f7b3b3b3b3b3b3b3b3b3b3
 Actualizar artículo (solo autor o admin).
 ```http
 PUT /api/articles/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <token>
-Content-Type: application/json
+
 
 {
   "title": "Introducción a Node.js - Actualizado",
@@ -238,14 +230,12 @@ Content-Type: application/json
 Eliminar artículo (solo autor o admin).
 ```http
 DELETE /api/articles/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <token>
 ```
 
 #### `GET /api/articles/my`
 Obtener artículos del usuario autenticado.
 ```http
 GET /api/articles/my
-Authorization: Bearer <token>
 ```
 
 ###  Comentarios
@@ -254,8 +244,7 @@ Authorization: Bearer <token>
 Crear comentario en un artículo.
 ```http
 POST /api/comments
-Authorization: Bearer <token>
-Content-Type: application/json
+
 
 {
   "content": "Excelente artículo sobre Node.js",
@@ -273,15 +262,14 @@ GET /api/comments/article/60f7b3b3b3b3b3b3b3b3b3b3
 Obtener comentarios del usuario autenticado.
 ```http
 GET /api/comments/my
-Authorization: Bearer <token>
+
 ```
 
 #### `PUT /api/comments/:id`
 Actualizar comentario (solo autor o admin).
 ```http
 PUT /api/comments/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <token>
-Content-Type: application/json
+
 
 {
   "content": "Comentario actualizado"
@@ -292,7 +280,7 @@ Content-Type: application/json
 Eliminar comentario (solo autor o admin).
 ```http
 DELETE /api/comments/60f7b3b3b3b3b3b3b3b3b3b3
-Authorization: Bearer <token>
+
 ```
 
 ###  Etiquetas
@@ -301,8 +289,7 @@ Authorization: Bearer <token>
 Crear y asociar etiqueta a artículo.
 ```http
 POST /api/articles/60f7b3b3b3b3b3b3b3b3b3b3/tags/tecnologia
-Authorization: Bearer <token>
-Content-Type: application/json
+
 
 {
   "name": "tecnología",
@@ -314,7 +301,7 @@ Content-Type: application/json
 Eliminar etiqueta de artículo.
 ```http
 DELETE /api/articles/60f7b3b3b3b3b3b3b3b3b3b3/tags/tecnologia
-Authorization: Bearer <token>
+
 ```
 
 ##  Instalación y Configuración
