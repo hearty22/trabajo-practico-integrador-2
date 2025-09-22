@@ -3,7 +3,7 @@ import { authenticate } from "../middlewares/auth/auth.middleware.js";
 import validator from "../middlewares/validator.js";
 import { createArticle, deleteArticle, getArticleById, getArticles, getMyArticles, updateArticle } from "../controllers/article.controllers.js";
 import { createArticleValidator, getArticleByIdValidator, updateArticleValidator } from "../middlewares/validators/article.validators.js";
-import { ownerOrAdminArticle } from "../middlewares/owner/owner.article.middleware.js";
+import { ownerOrAdminArticle } from "../middlewares/owner/owner.middleware.js";
 
 const articleRouter = Router();
 articleRouter.use(authenticate);
