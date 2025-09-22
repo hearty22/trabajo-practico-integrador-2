@@ -7,7 +7,7 @@ export const registerValidation = [
     .notEmpty().withMessage("the field must not be empty")
     .isString().withMessage("the field must be a string")
     .isAlphanumeric().withMessage("the field must be alphanumeric")
-    .isLength({min: 3, max: 20}).withMessage("the field should be 3-20 characters")
+    .isLength({min: 3, max: 20}).withMessage("the field should have 3-20 characters")
     .custom(async (value)=>{
         const user = await userModel.findOne({
             username : value

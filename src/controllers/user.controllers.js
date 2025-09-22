@@ -6,7 +6,7 @@ import { userModel } from "../models/user.model.js";
 // ● GET /api/users → Listar todos los usuarios con populate de artículos. (solo admin)
 export const getUsers = async (req, res)=>{
     try {
-        const users = await userModel.findOne({
+        const users = await userModel.find({
             deletedAt: null
         }).populate("articles").select("-password").select("-__v");
         return res.status(200).json({
